@@ -29,14 +29,14 @@ def do_classselector(event):
     object = objecttype()
 
 classselector = ttk.Combobox(root , values = list(pl) , width = 15)
-classselector.grid(row = 0 , column = 0)
+classselector.grid(row = 0 , column = 3 ,  pady = 5)
 classselector.bind('<<ComboboxSelected>>' , do_classselector)
 #classselector.set('list')
 #objecttype = pl[classselector.get()]
 
 head = tkt.Label(textvariable = var )
-var.set(f'practicing {classselector.get()}')
-head.grid(row = 0 , column = 1 , columnspan = 3)
+var.set(f'Please select class to practice')
+head.grid(row = 0 , column = 0 , columnspan = 3 , pady = 5)
 
 
 
@@ -84,7 +84,7 @@ func_arg.grid(row = 2 , column = 2 )
 
 def do_stuff():
     global object
-    try: 
+    try:
         object = eval(objectbox.get())
     except:
         addtext('Object cannot be empty \n' , 'war')
